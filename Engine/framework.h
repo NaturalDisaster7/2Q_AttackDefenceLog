@@ -11,6 +11,9 @@
 #include <d2d1.h>
 #include <d2d1helper.h>
 
+#include "External/FMod/fmod.hpp"		//Fmod 사용을 위한 헤더
+#include "External/FMod/fmod_errors.h"
+
 #include <d3d11.h>
 #pragma comment(lib, "d3d11.lib")
 
