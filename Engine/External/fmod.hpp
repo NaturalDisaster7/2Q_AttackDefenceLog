@@ -11,8 +11,13 @@
 #ifndef _FMOD_HPP
 #define _FMOD_HPP
 
+<<<<<<< Updated upstream
 #include "fmod_common.h"
 #include "fmod.h"
+=======
+#include "External/FMod/fmod_common.h"
+#include "External/FMod/fmod.h"
+>>>>>>> Stashed changes
 
 /*
     FMOD Namespace

@@ -341,6 +341,7 @@
     <ClInclude Include="Components\Physics\Rigidbody2D.h" />
     <ClInclude Include="Datas\CollisionInfo.h" />
     <ClInclude Include="External\fmod.hpp" />
+<<<<<<< Updated upstream
     <ClInclude Include="External\FMod\fmod.h" />
     <ClInclude Include="External\FMod\fmod.hpp" />
     <ClInclude Include="External\FMod\fmod_codec.h" />
@@ -350,6 +351,9 @@
     <ClInclude Include="External\FMod\fmod_errors.h" />
     <ClInclude Include="External\FMod\fmod_output.h" />
     <ClInclude Include="SoundDatas.h" />
+=======
+    <ClInclude Include="FModComponent.h" />
+>>>>>>> Stashed changes
     <ClInclude Include="Systems\MonoBehaviorSystem.h" />
     <ClInclude Include="Systems\CollisionSystem.h" />
     <ClInclude Include="Components\Collision\AABBCollider.h" />
@@ -408,6 +412,7 @@
     <ClCompile Include="Components\Fmod\AudioSystem.cpp" />
     <ClCompile Include="Components\Fmod\FModComponent.cpp" />
     <ClCompile Include="Components\Rendering\RenderComponent.cpp" />
+    <ClCompile Include="FModComponent.cpp" />
     <ClCompile Include="Math\Vector2.cpp" />
     <ClCompile Include="Components\Physics\Rigidbody2D.cpp" />
     <ClCompile Include="Systems\MonoBehaviorSystem.cpp" />

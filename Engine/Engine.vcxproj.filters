@@ -52,6 +52,9 @@
     <Filter Include="Math">
       <UniqueIdentifier>{f08d5be6-fc1a-432f-8cf0-67e09a566670}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\FMod">
+      <UniqueIdentifier>{eb700240-8fd3-4f55-ab30-e62fa5708cad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h">
@@ -218,6 +221,7 @@
     </ClInclude>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="External\FMod\fmod.h" />
     <ClInclude Include="External\FMod\fmod.hpp" />
     <ClInclude Include="External\FMod\fmod_codec.h" />
@@ -231,6 +235,13 @@
     <ClInclude Include="Components\Fmod\FModComponent.h" />
     <ClInclude Include="SoundDatas.h">
       <Filter>Datas</Filter>
+=======
+    <ClInclude Include="External\fmod.hpp">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="FModComponent.h">
+      <Filter>Components\FMod</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -353,8 +364,14 @@
     <ClCompile Include="Components\Rendering\RenderComponent.cpp">
       <Filter>Components\Rendering</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Components\Fmod\AudioSystem.cpp" />
     <ClCompile Include="Components\Fmod\FModComponent.cpp" />
+=======
+    <ClCompile Include="FModComponent.cpp">
+      <Filter>Components\FMod</Filter>
+    </ClCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
