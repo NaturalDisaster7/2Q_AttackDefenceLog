@@ -288,6 +288,9 @@ void Enemy::SetStatData(std::string tmp)
 		enemy_AttackPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
 		enemy_GuardPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
 		enemy_DamagedPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
+		
+		owner->GetTransform().SetScale(1.3f, 1.3f);
+		IdlePos = { 620.0f, 165.0f };
 
 		eSpriteDamage_Second = 0.0f;						  // 튜토리얼에는 기세가 없음		
 
