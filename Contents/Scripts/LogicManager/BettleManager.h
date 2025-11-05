@@ -177,7 +177,8 @@ private:
 
 	float PlayerMaxX = 0.0f;
 	D2D1_RECT_F HiteffectPlayer = { 170.0f, 680.0f , 370.0f, 1010.0f };
-	D2D1_RECT_F HiteffectEnemy = { 1540.0f, 180.0f , 1620.0f, 310.0f };
+	D2D1_RECT_F HiteffectEnemy = {0};
+	D2D1_RECT_F GuardEnemy = {0};
 	D2D1_RECT_F GuardPlayer = { 120.0f,  570.0f , 690.0f,  850.0f };
 	D2D1_RECT_F PerryRect01 = { 120.0f,  570.0f , 430.0f,  850.0f };
 	D2D1_RECT_F PerryRect02 = { 430.0f,  570.0f , 740.0f,  850.0f };

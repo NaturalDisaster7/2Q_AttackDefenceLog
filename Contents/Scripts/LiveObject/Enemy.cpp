@@ -336,6 +336,24 @@ void Enemy::SetStatData(std::string tmp)
 		enemy_GuardPath = enemy_CommonPath + nowEnemyData->enemySprite[2] + L"_fin.png";
 		enemy_DamagedPath = enemy_CommonPath + nowEnemyData->enemySprite[3] + L"_fin.png";
 
+
+		// 적 내용에 따른 위치 설정하기
+		if (Object_Name == L"도적") {  // 무당
+			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 맞추기
+			IdlePos = { 580.0f, 150.0f };
+		}
+		else if (Object_Name == L"남궁서") { // 구미호
+			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 맞추기
+			IdlePos = { 635.0f, 150.0f };
+		}
+		else if (Object_Name == L"강림") { // 강림?
+			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 유지 버전
+			IdlePos = { 620.0f, 150.0f };
+			//owner->GetTransform().SetScale(0.9f, 0.9f); // 크기 줄인버전
+			//IdlePos = { 580.0f, 150.0f };
+		}
+
+
 		eSpriteDamage_Second = nowEnemyData->Enemy_spriteDamage_Second;
 	}
 	
@@ -367,9 +385,9 @@ void Enemy::SetBitmap()
 	enemy_Guard->CreateBitmapResource(Singleton<AppPaths>::GetInstance().GetWorkingPath() + enemy_GuardPath);
 
 	D2D1_SIZE_F size = enemy_Idle->GetResource()->GetBitmap()->GetSize(); // 크기 같음으로 그냥 해도 될듯?
+
 	owner->GetTransform().SetOffset(-size.width / 2, size.height / 2);
-	owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 맞추기
-	IdlePos = { 580.0f, 150.0f };
+	
 	owner->GetTransform().SetPosition(IdlePos.x, IdlePos.y);
 }
 

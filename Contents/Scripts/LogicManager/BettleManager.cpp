@@ -84,6 +84,25 @@ void BettleManager::OnStart()
 
 	InitHpGauge();
 
+	// 적별 이펙트 rect 설정
+	if (m_Enemy->GetName() == L"도적") {  // 무당
+		HiteffectEnemy = { 1625.0f, 290.0f , 1705.0f, 375.0f };
+		GuardEnemy = { 1540.0f, 270.0f , 1620.0f, 360.0f };
+	}
+	else if (m_Enemy->GetName() == L"남궁서") { // 구미호
+		HiteffectEnemy = { 1520.0f, 300.0f , 1600.0f, 320.0f };
+		GuardEnemy = { 1540.0f, 360.0f , 1620.0f, 440.0f };
+	}
+	else if (m_Enemy->GetName() == L"강림") { // 강림?
+		HiteffectEnemy = { 1600.0f, 160.0f , 1660.0f, 250.0f };
+		GuardEnemy = { 1690.0f, 210.0f , 1790.0f, 270.0f };
+	}
+	else {
+		std::cout << "데이터 테이블에 없는 캐릭터" << std::endl;
+	}
+	
+
+
 }
 
 void BettleManager::OnUpdate()
@@ -485,7 +504,7 @@ void BettleManager::SetStateFormPatternIdle()
 		{
 			////////////////////////// 적의 방어 //////////////////////
 			m_Enemy->SetState("Enemy_Defence");	// 적 상태 변경 -> 적 회피
-			Vector2 EnemyPerryEff = { RandomHitPos_x(HiteffectEnemy), RandomHitPos_y(HiteffectEnemy) };
+			Vector2 EnemyPerryEff = { RandomHitPos_x(GuardEnemy), RandomHitPos_y(GuardEnemy) };
 			m_Player->CallGuardEffect(GuardEffCountE, EnemyPerryEff);
 			if (++GuardEffCountE > 10) GuardEffCountE = 0;
 
