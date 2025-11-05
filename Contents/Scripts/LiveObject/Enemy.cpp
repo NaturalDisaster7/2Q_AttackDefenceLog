@@ -288,6 +288,9 @@ void Enemy::SetStatData(std::string tmp)
 		enemy_AttackPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
 		enemy_GuardPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
 		enemy_DamagedPath = L"\\..\\Resource\\Sprites\\Enemy\\tuto_monster2.png";
+		
+		owner->GetTransform().SetScale(1.3f, 1.3f);
+		IdlePos = { 620.0f, 165.0f };
 
 		eSpriteDamage_Second = 0.0f;						  // 튜토리얼에는 기세가 없음		
 
@@ -339,16 +342,16 @@ void Enemy::SetStatData(std::string tmp)
 
 		// 적 내용에 따른 위치 설정하기
 		if (Object_Name == L"도적") {  // 무당
-			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 맞추기
+			owner->GetTransform().SetScale(1.1f, 1.1f); //  크기 맞추기 / 1.1배
 			IdlePos = { 580.0f, 150.0f };
 		}
 		else if (Object_Name == L"남궁서") { // 구미호
-			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 맞추기
-			IdlePos = { 635.0f, 150.0f };
+			owner->GetTransform().SetScale(1.2f, 1.2f); //  크기 맞추기 // 1.2배 + 위로 30픽셀
+			IdlePos = { 635.0f, 180.0f };
 		}
 		else if (Object_Name == L"강림") { // 강림?
-			owner->GetTransform().SetScale(1.0f, 1.0f); //  크기 유지 버전
-			IdlePos = { 620.0f, 150.0f };
+			owner->GetTransform().SetScale(1.05f, 1.05f); //  크기 유지 버전 // 1.05배 + 위로 10픽셀
+			IdlePos = { 620.0f, 160.0f };
 			//owner->GetTransform().SetScale(0.9f, 0.9f); // 크기 줄인버전
 			//IdlePos = { 580.0f, 150.0f };
 		}
@@ -365,14 +368,17 @@ void Enemy::SetBitmap()
 
 	enemy_Idle = owner->AddComponent<BitmapRenderer>();
 	enemy_Idle->CreateBitmapResource(Singleton<AppPaths>::GetInstance().GetWorkingPath() + enemy_IdlePath);
+	enemy_Idle->SetOrderInLayer(-9);
 
 
 	enemy_Attack = owner->AddComponent<BitmapRenderer>();
 	enemy_Attack->CreateBitmapResource(Singleton<AppPaths>::GetInstance().GetWorkingPath() + enemy_AttackPath);
+	enemy_Attack->SetOrderInLayer(-9);
 
 
 	enemy_Damaged = owner->AddComponent<BitmapRenderer>();
 	enemy_Damaged->CreateBitmapResource(Singleton<AppPaths>::GetInstance().GetWorkingPath() + enemy_DamagedPath);
+	enemy_Damaged->SetOrderInLayer(-9);
 	enemy_Damaged->SetClipingPosition
 	({
 		{EngineData::SceenWidth / 2 - 100.0f, 0.0f},
@@ -383,7 +389,7 @@ void Enemy::SetBitmap()
 
 	enemy_Guard = owner->AddComponent<BitmapRenderer>();
 	enemy_Guard->CreateBitmapResource(Singleton<AppPaths>::GetInstance().GetWorkingPath() + enemy_GuardPath);
-
+	enemy_Guard->SetOrderInLayer(-9);
 	D2D1_SIZE_F size = enemy_Idle->GetResource()->GetBitmap()->GetSize(); // 크기 같음으로 그냥 해도 될듯?
 
 	owner->GetTransform().SetOffset(-size.width / 2, size.height / 2);
